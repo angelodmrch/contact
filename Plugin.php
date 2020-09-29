@@ -2,7 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
-//use Dmrch\Contact\Models\MailConfig;
+use Dmrch\Contact\Models\MailConfig;
 use Validator;
 
 /**
@@ -42,7 +42,7 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        /*$config_site_key = MailConfig::get('site_key');
+        $config_site_key = MailConfig::get('site_key');
         $config_secret_key = MailConfig::get('secret_key');
 
         if ($config_site_key && $config_secret_key) {
@@ -73,7 +73,7 @@ class Plugin extends PluginBase
             });
         } else {
             return true;
-        }    */    
+        }  
     }
 
     public function registerMailTemplates()
