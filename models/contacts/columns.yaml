@@ -4,19 +4,18 @@
 
 columns:
     form:
-        label: Form
+        label: dmrch.contact::lang.contacts.form
         searchable: true
 
     email:
-        label: E-mail
+        label: dmrch.contact::lang.contacts.email
         searchable: true
 
     status:
-        label: Status
+        label: dmrch.contact::lang.contacts.status
         type: partial
         path: ~/plugins/dmrch/contact/models/contacts/_view_column.htm
 
     created_at:
-        label: Data de envio
+        label: dmrch.contact::lang.contacts.created_at
         type: datetime
-        format: d/m/Y H:i:s

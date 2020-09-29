@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Newsletter
+name: dmrch.contact::lang.base.newsletter
 
 # Model Form Field configuration
 form: $/dmrch/contact/models/newsletter/fields.yaml
@@ -16,16 +16,16 @@ defaultRedirect: dmrch/contact/newsletter
 
 # Create page
 create:
-    title: Create Newsletter
+    title: dmrch.contact::lang.newsletter.create
     redirect: dmrch/contact/newsletter/update/:id
     redirectClose: dmrch/contact/newsletter
 
 # Update page
 update:
-    title: Edit Newsletter
+    title: dmrch.contact::lang.newsletter.update
     redirect: dmrch/contact/newsletter
     redirectClose: dmrch/contact/newsletter
 
 # Preview page
 preview:
-    title: Preview Newsletter
+    title: dmrch.contact::lang.newsletter.preview

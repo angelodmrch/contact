@@ -30,8 +30,8 @@ class Newsletter extends ComponentBase
         ];
 
         $messages = [
-            'email.required' => 'Este campo é obrigatório.'
-            'email.email' => 'Este campo é obrigatório.'
+            'email.required' => 'dmrch.contact::lang.validation.required'
+            'email.email' => 'dmrch.contact::lang.validation.email'
         ];
 
         $validation = Validator::make(post(), $rules, $messages);    
@@ -49,7 +49,6 @@ class Newsletter extends ComponentBase
                     $formSave->name = post('name');
                     $formSave->email = post('email');  
                     $formSave->save();     
-
                 }        
 
                 $this->news_success = true;

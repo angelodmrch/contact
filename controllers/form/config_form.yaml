@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Form
+name: dmrch.contact::lang.base.form
 
 # Model Form Field configuration
 form: $/dmrch/contact/models/form/fields.yaml
@@ -16,16 +16,16 @@ defaultRedirect: dmrch/contact/form
 
 # Create page
 create:
-    title: Create Form
+    title: dmrch.contact::lang.form.create
     redirect: dmrch/contact/form/update/:id
     redirectClose: dmrch/contact/form
 
 # Update page
 update:
-    title: Edit Form
+    title: dmrch.contact::lang.form.update
     redirect: dmrch/contact/form
     redirectClose: dmrch/contact/form
 
 # Preview page
 preview:
-    title: Preview Form
+    title: dmrch.contact::lang.form.preview

@@ -4,9 +4,9 @@
 
 columns:
     id:
-        label: ID
+        label: dmrch.contact::lang.form.id
         searchable: true
 
     name:
-        label: Name
+        label: dmrch.contact::lang.form.name
         searchable: true

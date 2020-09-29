@@ -18,10 +18,10 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Contact',
-            'description' => 'Plugin para Contacts e Newsletter',
+            'name'        => 'dmrch.contact::lang.plugin.name',
+            'description' => 'dmrch.contact::lang.plugin.description',
             'author'      => 'Angelo Demarchi',
-            'icon'        => 'icon-envelope'
+            'icon'        => 'icon-commenting-o'
         ];
     }
 
@@ -105,21 +105,21 @@ class Plugin extends PluginBase
     {
         return [
             'dmrch.contact.access_contact' => [
-                'tab'   => 'Contact',
-                'label' => 'Contact'
+                'tab'   => 'dmrch.contact::lang.base.contact',
+                'label' => 'dmrch.contact::lang.base.contact'
             ],
             'dmrch.contact.access_newslleter' => [
-                'tab'   => 'Contact',
-                'label' => 'Newsletter'
+                'tab'   => 'dmrch.contact::lang.base.contact',
+                'label' => 'dmrch.contact::lang.base.newslleter'
             ],
             'dmrch.contact.access_config' => [
-                'tab'   => 'Contact',
-                'label' => 'Configurações'
+                'tab'   => 'dmrch.contact::lang.base.contact',
+                'label' => 'dmrch.contact::lang.base.settings'
             ],
             'dmrch.contact.access_forms' => [
-                'tab'   => 'Contact',
-                'label' => 'Forms'
-            ],
+                'tab'   => 'dmrch.contact::lang.base.contact',
+                'label' => 'dmrch.contact::lang.base.forms'
+            ]
         ];
     }
 
@@ -133,38 +133,38 @@ class Plugin extends PluginBase
         return [
 
             'contacts' => [
-                'label'       => 'Contact',
+                'label'       => 'dmrch.contact::lang.base.contact',
                 'url'         => Backend::url('dmrch/contact/contacts'),
-                'icon'        => 'icon-envelope',
+                'icon'        => 'icon-commenting-o',
                 'order'       => 500,
                 'permissions' => ['dmrch.contact.*'],
                 'sideMenu' => [
                     'contacts' => [
-                        'label'       => 'Contact',
-                        'icon'        => 'icon-envelope',
+                        'label'       => 'dmrch.contact::lang.base.contact',
+                        'icon'        => 'icon-commenting-o',
                         'url'         => Backend::url('dmrch/contact/contacts'),   
                         'permissions' => ['dmrch.contact.access_contact'], 
                     ], 
                     'newsletter' => [
-                        'label'       => 'Newsletter',
+                        'label'       => 'dmrch.contact::lang.base.newsletter',
                         'icon'        => 'icon-envelope',
                         'url'         => Backend::url('dmrch/contact/newsletter'),   
                         'permissions' => ['dmrch.contact.access_newslleter'],
                      ],
                     'forms' => [
-                        'label'       => 'Forms',
+                        'label'       => 'dmrch.contact::lang.base.forms',
                         'icon'        => 'icon-wpforms',
                         'url'         => Backend::url('dmrch/contact/form'),
                         'permissions' => ['dmrch.contact.access_contact'],
                     ], 
                     'mailconfig' => [
-                        'label'       => 'Configurações',
+                        'label'       => 'dmrch.contact::lang.base.settings',
                         'icon'        => 'icon-cogs',
                         'url'         => Backend::url('system/settings/update/dmrch/contact/settings'), 
                         'permissions' => ['dmrch.contact.access_config'],   
                     ]
                 ]
-            ],
+            ]
         ];
     }
 
@@ -172,9 +172,9 @@ class Plugin extends PluginBase
     {
         return [
             'settings' => [
-                'label'       => 'Contact',
-                'description' => 'Manage Contact settings.',
-                'category'    => 'Contact',
+                'label'       => 'dmrch.contact::lang.settings.label',
+                'description' => 'dmrch.contact::lang.settings.description',
+                'category'    => 'dmrch.contact::lang.settings.category',
                 'icon'        => 'icon-cog',
                 'class'       => 'Dmrch\Contact\Models\MailConfig',
                 'order'       => 500,

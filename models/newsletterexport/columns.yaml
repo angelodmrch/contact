@@ -2,7 +2,6 @@
 #  Form Field Definitions
 # ===================================
 columns:
-
-    name: Nome
-    email: E-mail
-    created_at: Data de envio
+    name: dmrch.contact::lang.newsletter.name
+    email: dmrch.contact::lang.newsletter.email
+    created_at: dmrch.contact::lang.newsletter.created_at

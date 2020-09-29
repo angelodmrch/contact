@@ -3,19 +3,18 @@
 # ===================================
 
 fields:
-
-    nome:
-        label: Nome
+    name:
+        label: dmrch.contact::lang.newsletter.name
         type: text
         disabled: true
 
     email:
-        label: E-mail
+        label: dmrch.contact::lang.newsletter.email
         type: text
         disabled: true
 
     created_at:
-        label: Data de envio
+        label: dmrch.contact::lang.newsletter.created_at
         type: text
         format: d/m/Y H:i:s
         disabled: true

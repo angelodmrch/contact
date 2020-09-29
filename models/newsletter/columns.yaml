@@ -3,15 +3,15 @@
 # ===================================
 
 columns:
-    nome:
-        label: Nome
+    name:
+        label: dmrch.contact::lang.newsletter.name
         searchable: true
 
     email:
-        label: E-mail
+        label: dmrch.contact::lang.newsletter.email
         searchable: true
 
     created_at:
-      label: Data de envio
+      label: dmrch.contact::lang.newsletter.created_at
       type: datetime
       format: d/m/Y H:i:s

@@ -9,7 +9,7 @@ list: $/dmrch/contact/models/newsletter/columns.yaml
 modelClass: Dmrch\Contact\Models\Newsletter
 
 # List Title
-title: Manage Newsletters
+title: dmrch.contact::lang.newsletter.list_title
 
 # Link URL for each record
 recordUrl: dmrch/contact/newsletter/update/:id

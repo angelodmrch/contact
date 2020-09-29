@@ -4,36 +4,35 @@
 
 fields:
     status:
-        label: Marcar como lido?
+        label: dmrch.contact::lang.contacts.markasreed
         type: switch
         span: left
 
     form:  
-        label: Form
+        label: dmrch.contact::lang.contacts.form
         type: text
         span: left
         disabled: true
 
     email:
-        label: E-mail
+        label: dmrch.contact::lang.contacts.email
         type: text
         span: right
         disabled: true
 
     message:    
-        label: Mensagem
+        label: dmrch.contact::lang.contacts.message
         type: richeditor
         span: full
         disabled: true
 
     files:
-        label: Files
+        label: dmrch.contact::lang.contacts.files
         type: fileupload
         mode: file
         disabled: true
 
     created_at:
-        tab: Geral
-        label: Data de envio
+        label: dmrch.contact::lang.contacts.created_at
         span: full
         disabled: true

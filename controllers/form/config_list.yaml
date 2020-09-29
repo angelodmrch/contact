@@ -9,7 +9,7 @@ list: $/dmrch/contact/models/form/columns.yaml
 modelClass: Dmrch\Contact\Models\Form
 
 # List Title
-title: Manage Forms
+title: dmrch.contact::lang.form.list_title
 
 # Link URL for each record
 recordUrl: dmrch/contact/form/update/:id

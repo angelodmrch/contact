@@ -5,46 +5,46 @@
 tabs:
     fields:
         name:
-            label: Name
+            label: dmrch.contact::lang.form.name
             type: text
             span: left
             required: true
-            tab: Geral
+            tab: dmrch.contact::lang.form.geral_tab
 
         code:
-            label: Code
+            label: dmrch.contact::lang.form.code
             type: text
             span: right
             required: true
-            tab: Geral
+            tab: dmrch.contact::lang.form.geral_tab
             preset:
                 field: name
                 type: slug
 
         emails:
-            label: E-mails
+            label: dmrch.contact::lang.form.emails
             type: text
-            tab: Geral
+            tab: dmrch.contact::lang.form.geral_tab
             
         fields:
-            label: Fields
+            label: dmrch.contact::lang.form.fields
             type: repeater
-            tab: Geral
+            tab: dmrch.contact::lang.form.geral_tab
             required: true
             form:
                 fields:
                     label:
-                        label: Label
+                        label: dmrch.contact::lang.form.fields_label
                         type: text
                         span: left
 
                     name:
-                        label: Name
+                        label: dmrch.contact::lang.form.fields_name
                         type: text
                         span: right
 
                     type:
-                        label: Type
+                        label: dmrch.contact::lang.form.fields_type
                         type: dropdown
                         options:
                             text: Text
@@ -69,17 +69,17 @@ tabs:
                         form:
                             fields:
                                 label:
-                                    label: Label
+                                    label: dmrch.contact::lang.form.fields_options_label
                                     type: text
                                     span: left
 
                                 value:
-                                    label: Value
+                                    label: dmrch.contact::lang.form.fields_options_value
                                     type: text
                                     span: right
 
                     placeholder:
-                        label: Placeholder
+                        label: dmrch.contact::lang.form.fields_placeholder
                         type: text
                         trigger:
                             action: show
@@ -87,7 +87,7 @@ tabs:
                             condition: value[text],value[number],value[password],value[email],value[textarea]
 
                     partial:
-                        label: Parial
+                        label: dmrch.contact::lang.form.fields_partial
                         type: text
                         trigger:
                             action: show
@@ -95,24 +95,24 @@ tabs:
                             condition: value[partial]
 
                     validation:
-                        label: Validation
+                        label: dmrch.contact::lang.form.fields_validation
                         type: repeater
                         form:
                             fields:
                                 rule:
-                                    label: Rule
+                                    label: dmrch.contact::lang.form.fields_validation_rule
                                     type: text
                                     span: left
                                     default: 'required'
 
                                 message:
-                                    label: Message
+                                    label: dmrch.contact::lang.form.fields_validation_message
                                     type: text
                                     span: right
-                                    default: 'This field is required'
+                                    default: dmrch.contact::lang.form.fields_validation_message_default
 
                     columns:
-                        label: CSS columns
+                        label: dmrch.contact::lang.form.fields_columns
                         type: dropdown
                         span: left
                         options:
@@ -130,29 +130,29 @@ tabs:
                             1: 1
 
         redirect:
-            label: Redirect
+            label: dmrch.contact::lang.form.redirect
             type: switch
             span: left
-            tab: Messages
+            tab: dmrch.contact::lang.form.message_tab
 
         redirect_to:
-            label: Redirect To
-            tab: Messages
+            label: dmrch.contact::lang.form.redirect_to
+            tab: dmrch.contact::lang.form.message_tab
             trigger:
                 action: show
                 field: redirect
                 condition: checked
 
         success_message:
-            label: Success Message
+            label: dmrch.contact::lang.form.success_message
             type: richeditor
-            default: '<p>Message sent successfully!</p>'
+            default: dmrch.contact::lang.form.success_message_default
             required: true
-            tab: Messages
+            tab: dmrch.contact::lang.form.message_tab
 
         error_message:
-            label: Error Message
+            label: dmrch.contact::lang.form.error_message
             type: richeditor
-            default: '<p>Something went wrong!</p>'
+            default: dmrch.contact::lang.form.error_message_default
             required: true
-            tab: Messages
+            tab: dmrch.contact::lang.form.message_tab

@@ -51,7 +51,7 @@ class Form extends ComponentBase
         ];
 
         $messages = [
-            'g-recaptcha-response.recaptcha' => 'Este campo é obrigatório',
+            'g-recaptcha-response.recaptcha' => 'dmrch.contact::lang.validation.required',
         ];
 
         foreach ($form->fields as $field) {
