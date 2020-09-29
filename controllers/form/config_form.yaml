@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Form
+
+# Model Form Field configuration
+form: $/dmrch/contact/models/form/fields.yaml
+
+# Model Class name
+modelClass: Dmrch\Contact\Models\Form
+
+# Default redirect location
+defaultRedirect: dmrch/contact/form
+
+# Create page
+create:
+    title: Create Form
+    redirect: dmrch/contact/form/update/:id
+    redirectClose: dmrch/contact/form
+
+# Update page
+update:
+    title: Edit Form
+    redirect: dmrch/contact/form
+    redirectClose: dmrch/contact/form
+
+# Preview page
+preview:
+    title: Preview Form

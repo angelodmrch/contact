@@ -1,0 +1,92 @@
+{% if forms.property('code') %}
+	{% set code = forms.property('code') %}
+{% else %}
+	{% set code = post('form_code') %}
+{% endif %}
+
+{% set form = forms.getForm(code) %}
+
+<div class="row">
+	<div class="col-lg-12 col-12">
+		{% if forms.success %}
+			<div class="alert alert-success">
+				{{ form.success_message|raw }}
+			</div>
+		{% elseif forms.errors|length > 0 %}
+			<div class="alert alert-danger">
+				{{ form.error_message|raw }}
+			</div>
+		{% endif %}
+	</div>
+</div>
+
+{{ form_ajax('forms::onSubmit', { update: { 'forms::form': '#form-container-'~code }, enctype: 'multipart/form-data', files: true }) }}
+
+<input type="hidden" name="form_name" id="form_name" value="{{ form.name }}">
+<input type="hidden" name="form_code" id="form_code" value="{{ form.code }}">
+
+<div class="row">
+	
+	{% for field in form.fields %}
+
+		<div class="col-lg-{{ field.columns }} col-12">	
+
+			{% if field.type == 'text' or field.type == 'email' or field.type == 'number' or field.type == 'password' or field.type == 'file' %}
+				<label for="{{ field.name }}">{{ field.label }}</label>
+				<input type="{{ field.type }}" name="{{ field.name }}" id="{{ field.name }}" placeholder="{{ field.placeholder }}" class="form-control {% if forms.errors.first(field.name) %}is-invalid{% endif %}" value="{{ post(field.name)|striptags }}">
+				<span class="invalid-feedback">{{ forms.errors.first(field.name) }}</span>
+			{% endif %}
+
+			{% if field.type == 'textarea' %}
+				<label for="{{ field.name }}">{{ field.label }}</label>
+				<textarea name="{{ field.name }}" id="{{ field.name }}" placeholder="{{ field.placeholder }}" class="form-control {% if forms.errors.first(field.name) %}is-invalid{% endif %}">{{ post(field.name)|striptags }}</textarea>
+				<span class="invalid-feedback">{{ forms.errors.first(field.name) }}</span>
+			{% endif %}
+
+			{% if field.type == 'dropdown' %}
+				<label for="{{ field.name }}">{{ field.label }}</label>
+				<select name="{{ field.name }}" id="{{ field.name }}" class="form-control {% if forms.errors.first(field.name) %}is-invalid{% endif %}">
+					{% for option in field.options %}
+						<option value="{{ option.value }}">{{ option.label }}</option>
+					{% endfor %}
+				</select>
+				<span class="invalid-feedback">{{ forms.errors.first(field.name) }}</span>
+			{% endif %}
+
+			{% if field.type == 'radio_list' or field.type == 'checkbox_list' %}
+				<label for="{{ field.name }}">{{ field.label }}</label>
+				
+					{% for option in field.options %}
+						<input type="{{ field.type|replace({ '_list':'' }) }}" name="{{ field.name }}[]" id="{{ field.name }}-{{ loop.index }}" class="{% if forms.errors.first(field.name) %}is-invalid{% endif %}" value="{{ option.value }}">
+						<label for="{{ field.name }}-{{ loop.index }}">{{ option.label }}</label>			
+					{% endfor %}
+				
+				<span class="invalid-feedback">{{ forms.errors.first(field.name) }}</span>
+			{% endif %}
+
+			{% if field.type == 'checkbox' %}				
+				<input type="checkbox" name="{{ field.name }}" id="{{ field.name }}" class="{% if forms.errors.first(field.name) %}is-invalid{% endif %}" value="{{ field.value }}">
+				<label for="{{ field.name }}">{{ field.label }}</label>			
+				<span class="invalid-feedback">{{ forms.errors.first(field.name) }}</span>
+			{% endif %}
+
+			{% if field.type == 'partial' %}
+				{% partial field.partial %}
+			{% endif %}
+
+		</div>
+
+	{% endfor %}
+
+	<div class="col-lg-12 col-12">		
+
+		{% if forms.getConfig('site_key') and forms.getConfig('secret_key') %}
+			<div class="g-recaptcha" data-sitekey="{{ forms.getConfig('site_key') }}"></div>
+			<span class="invalid-feedback">{{ forms.errors.first('g-recaptcha-response') }}</span>
+		{% endif %}
+
+		<button type="submit" class="btn btn-primary">ENVIAR</button>
+	</div>
+</div>
+
+{{ form_close() }}

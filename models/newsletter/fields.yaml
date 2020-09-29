@@ -1,0 +1,21 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    nome:
+        label: Nome
+        type: text
+        disabled: true
+
+    email:
+        label: E-mail
+        type: text
+        disabled: true
+
+    created_at:
+        label: Data de envio
+        type: text
+        format: d/m/Y H:i:s
+        disabled: true

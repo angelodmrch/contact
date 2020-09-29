@@ -1,0 +1,9 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+columns:
+
+    form: Area
+    email: E-mail
+    message: Mensagem
+    created_at: Data de envio

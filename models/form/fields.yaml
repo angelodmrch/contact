@@ -1,0 +1,158 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        name:
+            label: Name
+            type: text
+            span: left
+            required: true
+            tab: Geral
+
+        code:
+            label: Code
+            type: text
+            span: right
+            required: true
+            tab: Geral
+            preset:
+                field: name
+                type: slug
+
+        emails:
+            label: E-mails
+            type: text
+            tab: Geral
+            
+        fields:
+            label: Fields
+            type: repeater
+            tab: Geral
+            required: true
+            form:
+                fields:
+                    label:
+                        label: Label
+                        type: text
+                        span: left
+
+                    name:
+                        label: Name
+                        type: text
+                        span: right
+
+                    type:
+                        label: Type
+                        type: dropdown
+                        options:
+                            text: Text
+                            number: Number
+                            password: Password
+                            email: Email
+                            textarea: Textarea
+                            file: File
+                            dropdown: Dropdown
+                            checkbox: Checkbox
+                            checkbox_list: Checkbox List
+                            radio_list: Radio List
+                            partial: Partial
+
+                    options:
+                        type: repeater
+                        trigger:
+                            action: show
+                            field: type
+                            condition: value[dropdown],value[checkbox_list],value[radio_list]
+
+                        form:
+                            fields:
+                                label:
+                                    label: Label
+                                    type: text
+                                    span: left
+
+                                value:
+                                    label: Value
+                                    type: text
+                                    span: right
+
+                    placeholder:
+                        label: Placeholder
+                        type: text
+                        trigger:
+                            action: show
+                            field: type
+                            condition: value[text],value[number],value[password],value[email],value[textarea]
+
+                    partial:
+                        label: Parial
+                        type: text
+                        trigger:
+                            action: show
+                            field: type
+                            condition: value[partial]
+
+                    validation:
+                        label: Validation
+                        type: repeater
+                        form:
+                            fields:
+                                rule:
+                                    label: Rule
+                                    type: text
+                                    span: left
+                                    default: 'required'
+
+                                message:
+                                    label: Message
+                                    type: text
+                                    span: right
+                                    default: 'This field is required'
+
+                    columns:
+                        label: CSS columns
+                        type: dropdown
+                        span: left
+                        options:
+                            12: 12
+                            11: 11
+                            10: 10
+                            9: 9
+                            8: 8
+                            7: 7
+                            6: 6
+                            5: 5
+                            4: 4
+                            3: 3
+                            2: 2
+                            1: 1
+
+        redirect:
+            label: Redirect
+            type: switch
+            span: left
+            tab: Messages
+
+        redirect_to:
+            label: Redirect To
+            tab: Messages
+            trigger:
+                action: show
+                field: redirect
+                condition: checked
+
+        success_message:
+            label: Success Message
+            type: richeditor
+            default: '<p>Message sent successfully!</p>'
+            required: true
+            tab: Messages
+
+        error_message:
+            label: Error Message
+            type: richeditor
+            default: '<p>Something went wrong!</p>'
+            required: true
+            tab: Messages

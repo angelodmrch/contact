@@ -1,0 +1,11 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+fields:
+    site_key:
+        label: "reCaptcha Site Key"
+        type: text
+
+    secret_key:
+        label: "reCaptcha Secret Key"
+        type: text

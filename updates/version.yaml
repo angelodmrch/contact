@@ -1,0 +1,8 @@
+1.0.1: 
+    - First version of Contact
+    - create_contacts_table.php
+    - create_newsletters_table.php
+1.0.2:
+    - Added custom forms
+    - create_forms_table.php
+    - seed_forms_table.php

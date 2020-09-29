@@ -1,0 +1,39 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    status:
+        label: Marcar como lido?
+        type: switch
+        span: left
+
+    form:  
+        label: Form
+        type: text
+        span: left
+        disabled: true
+
+    email:
+        label: E-mail
+        type: text
+        span: right
+        disabled: true
+
+    message:    
+        label: Mensagem
+        type: richeditor
+        span: full
+        disabled: true
+
+    files:
+        label: Files
+        type: fileupload
+        mode: file
+        disabled: true
+
+    created_at:
+        tab: Geral
+        label: Data de envio
+        span: full
+        disabled: true

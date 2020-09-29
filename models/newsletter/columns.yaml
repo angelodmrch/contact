@@ -1,0 +1,17 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    nome:
+        label: Nome
+        searchable: true
+
+    email:
+        label: E-mail
+        searchable: true
+
+    created_at:
+      label: Data de envio
+      type: datetime
+      format: d/m/Y H:i:s

@@ -1,0 +1,33 @@
+{% if newsletter.news_success %}
+	<div class="alert alert-success">
+		<p class="font-regular">Cadastrado com sucesso!</p>
+	</div>
+{% else %}
+	{% if newsletter.news_errors|length > 0 %}
+		<div class="alert alert-danger mt-1">
+			<p>Ocorreram erros de validação. Verifique o formulário!</p>
+		</div>
+	{% endif %}
+{% endif %}
+
+{{ form_ajax('newsletter::onSubmit', { id: 'form-newsletter', update: { 'newsletter::form': '#form-container-newsletter' }}) }}
+
+	<div class="row">
+
+		<div class="col-lg-5 col-12">
+			<input type="text" name="name" placeholder="NOME" value="{{ post('name')|striptags }}" class="form-control {% if newsletter.news_errors.first('name') %}is-invalid{% endif %}">
+			<div class="invalid-feedback">{{ newsletter.news_errors.first('name') }}</div>
+		</div>
+
+		<div class="col-lg-5 col-12">
+			<input type="email" name="email" placeholder="E-MAIL" value="{{ post('email')|striptags }}" class="form-control {% if newsletter.news_errors.first('email') %}is-invalid{% endif %}">			
+			<div class="invalid-feedback">{{ newsletter.news_errors.first('email') }}</div>
+		</div>
+
+		<div class="col-lg-2 col-12">		
+			<button type="submit" class="btn btn-primary">ENVIAR</button>
+		</div>
+
+	</div>
+
+{{ form_close() }}

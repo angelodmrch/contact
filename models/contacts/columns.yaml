@@ -1,0 +1,22 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    form:
+        label: Form
+        searchable: true
+
+    email:
+        label: E-mail
+        searchable: true
+
+    status:
+        label: Status
+        type: partial
+        path: ~/plugins/dmrch/contact/models/contacts/_view_column.htm
+
+    created_at:
+        label: Data de envio
+        type: datetime
+        format: d/m/Y H:i:s
