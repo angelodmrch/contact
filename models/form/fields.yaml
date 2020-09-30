@@ -27,6 +27,7 @@ tabs:
             tab: dmrch.contact::lang.form.geral_tab
             
         fields:
+            permissions: dmrch.contact.access_forms_edit
             label: dmrch.contact::lang.form.fields
             type: repeater
             tab: dmrch.contact::lang.form.geral_tab

@@ -11,6 +11,7 @@ return [
         'contacts' => 'Contatos',
         'form' => 'Formulário',
         'forms' => 'Formulários',
+        'forms_edit' => 'Editar Formulários',
         'newsletter' => 'Newsletter',
         'settings' => 'Configurações',
     ],
@@ -25,7 +26,6 @@ return [
         'files' => 'Arquivos',
         'created_at' => 'Enviado em',
         'updated_at' => 'Atualizado em',
-
         'delete_selected' => 'Excluir selecionados',
         'delete_confirm' => 'Tem certeza que deseja excluir os contatos selecionados?',
         'export' => 'Exportar',
@@ -66,7 +66,6 @@ return [
         'error_message_default' => '<p>Algo deu errado!</p>',
         'geral_tab' => 'Geral',
         'message_tab' => 'Mensagens',
-
         'delete_selected' => 'Excluir selecionados',
         'delete_confirm' => 'Tem certeza que deseja excluir os formulário selecionados?',
         'list_title' => 'Gerenciar Formulários',
@@ -84,7 +83,6 @@ return [
         'email' => 'E-mail',
         'created_at' => 'Enviado em',
         'updated_at' => 'Atualizado em',
-
         'delete_selected' => 'Excluir selecionados',
         'delete_confirm' => 'Tem certeza que deseja excluir os newsletter selecionados?',
         'export' => 'Exportar',

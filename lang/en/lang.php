@@ -11,6 +11,7 @@ return [
         'contacts' => 'Contacts',
         'form' => 'Form',
         'forms' => 'Forms',
+        'forms_edit' => 'Edit Forms',
         'newsletter' => 'Newsletter',
         'settings' => 'Settings',
     ],
@@ -25,7 +26,6 @@ return [
         'files' => 'Files',
         'created_at' => 'Created at',
         'updated_at' => 'Updated at',
-
         'delete_selected' => 'Delete selected',
         'delete_confirm' => 'Are you sure you want to delete the selected Contacts?',
         'export' => 'Export',
@@ -66,7 +66,6 @@ return [
         'error_message_default' => '<p>Something went wrong!</p>',
         'geral_tab' => 'Geral',
         'message_tab' => 'Messages',
-
         'delete_selected' => 'Delete selected',
         'delete_confirm' => 'Are you sure you want to delete the selected form?',
         'list_title' => 'Manage Forms',
@@ -84,7 +83,6 @@ return [
         'email' => 'E-mail',
         'created_at' => 'Created at',
         'updated_at' => 'Updated at',
-
         'delete_selected' => 'Delete selected',
         'delete_confirm' => 'Are you sure you want to delete the selected newsletter?',
         'export' => 'Export',

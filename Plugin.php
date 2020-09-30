@@ -119,6 +119,10 @@ class Plugin extends PluginBase
             'dmrch.contact.access_forms' => [
                 'tab'   => 'dmrch.contact::lang.base.contact',
                 'label' => 'dmrch.contact::lang.base.forms'
+            ],
+            'dmrch.contact.access_forms_edit' => [
+                'tab'   => 'dmrch.contact::lang.base.contact',
+                'label' => 'dmrch.contact::lang.base.forms_edit'
             ]
         ];
     }
@@ -155,7 +159,7 @@ class Plugin extends PluginBase
                         'label'       => 'dmrch.contact::lang.base.forms',
                         'icon'        => 'icon-wpforms',
                         'url'         => Backend::url('dmrch/contact/form'),
-                        'permissions' => ['dmrch.contact.access_contact'],
+                        'permissions' => ['dmrch.contact.access_forms'],
                     ], 
                     'mailconfig' => [
                         'label'       => 'dmrch.contact::lang.base.settings',
