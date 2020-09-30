@@ -182,4 +182,15 @@ class Plugin extends PluginBase
             ]
         ];
     }
+
+    public function registerReportWidgets()
+    {
+        return [
+            'Dmrch\Contact\ReportWidgets\Contacts' => [
+                'label'   => 'dmrch.contact::lang.plugin.name',
+                'context' => 'dashboard',
+                'permissions' => ['dmrch.contact.access_contact'], 
+            ]
+        ];
+    }
 }

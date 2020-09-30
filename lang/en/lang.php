@@ -106,5 +106,11 @@ return [
     'validation' => [
         'required' => 'This field is required',
         'email' => 'Enter a valid e-mail',
+    ],
+
+    'widget' =>  [
+        'messages' => 'Messages',
+        'unread' => 'Unread',
+        'see_all' => 'See All'
     ]
 ];

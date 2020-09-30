@@ -106,5 +106,11 @@ return [
     'validation' => [
         'required' => 'Este compo é obrigatório',
         'email' => 'Informe um e-mail válido',
+    ],
+
+    'widget' =>  [
+        'messages' => 'Mensagens',
+        'unread' => 'Não Lidas',
+        'see_all' => 'Ver Todas'
     ]
 ];

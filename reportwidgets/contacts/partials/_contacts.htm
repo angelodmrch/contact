@@ -1,0 +1,47 @@
+<div class="report-widget">
+    <h3><?= e($this->property('title')) ?></h3>
+    <?php if (!isset($error)): ?>
+
+		<b><?= $count ?></b> <?= e(trans('dmrch.contact::lang.widget.messages')) ?> | <b class="text-danger"><?= $unread ?></b> <?= e(trans('dmrch.contact::lang.widget.unread')) ?> 
+
+		<table class="table table-hover">
+
+			<thead>	
+				<tr>
+					<th scope="col"><?= e(trans('dmrch.contact::lang.contacts.form')) ?></th>
+					<th scope="col"><?= e(trans('dmrch.contact::lang.contacts.email')) ?></th>
+					<th scope="col"><?= e(trans('dmrch.contact::lang.contacts.status')) ?></th>
+					<th scope="col"><?= e(trans('dmrch.contact::lang.contacts.created_at')) ?></th>
+				</tr>
+			</thead>	
+
+			<tbody>	
+		   		<?php foreach ($list as $key => $value): ?>		        		
+
+		        	<tr onclick="window.location = 'dmrch/contact/contacts/update/<?= $value->id ?>'">
+		        		<td><?= $value->form ?></td>
+		        		<td><?= $value->email ?></td>
+		        		<td><?php
+								if($value->status) {
+   									echo "<i class=\"oc-icon-check\" style=\"color: #3c763d; font-size: 18px;\"></i>";
+								} else {
+    								echo "<i class='oc-icon-eye' style='color: #31708f; font-size: 18px;'></i>";
+							}?>								
+						</td>
+		        		<td><?= $value->created_at->format('j F Y h:i:s') ?></td>
+		        	<tr>		        	
+
+	        	<?php endforeach ?>
+
+	        </tbody>
+
+		</table>
+
+        <br>
+
+        <a href="<?= Backend::url('dmrch/contact/contacts') ?>" class="btn btn-primary"><?= e(trans('dmrch.contact::lang.widget.see_all')) ?></a>
+
+    <?php else: ?>
+        <p class="flash-message static warning"><?= e($error) ?></p>
+    <?php endif ?>
+</div>
