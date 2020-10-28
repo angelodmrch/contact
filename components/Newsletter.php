@@ -30,7 +30,7 @@ class Newsletter extends ComponentBase
         ];
 
         $messages = [
-            'email.required' => 'dmrch.contact::lang.validation.required'
+            'email.required' => 'dmrch.contact::lang.validation.required',
             'email.email' => 'dmrch.contact::lang.validation.email'
         ];
 

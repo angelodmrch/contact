@@ -74,13 +74,16 @@ class Form extends ComponentBase
 
                 $data = Input::all();                
 
-                $message = '';
+                $message = '<p>';
 
                 foreach ($form->fields as $value) {
                     if ($value['type'] !== 'file') {
-                        $message .= '<p><b>'. $value['label'] .':</b><br>'.post($value['name']).'</br></p>';
+                        $message .= '<b>'. $value['label'] .':</b><br>'.post($value['name']).'<br><br>';
                     }
                 }
+
+                $message .= '</p>';
+
 
                 $data['message_html'] = $message;
 

@@ -85,7 +85,7 @@
 			<span class="invalid-feedback">{{ forms.errors.first('g-recaptcha-response') }}</span>
 		{% endif %}
 
-		<button type="submit" class="btn btn-primary">ENVIAR</button>
+		<button type="submit" class="btn btn-primary" onclick="$(this).prop('disabled', true );">ENVIAR</button>
 	</div>
 </div>
 
