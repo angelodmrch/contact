@@ -85,7 +85,9 @@
 			<span class="invalid-feedback">{{ forms.errors.first('g-recaptcha-response') }}</span>
 		{% endif %}
 
-		<button type="submit" class="btn btn-primary" onclick="$(this).prop('disabled', true );">ENVIAR</button>
+		<button type="submit" class="btn btn-primary" onclick="$(this).hide();$(this).next('button').show();">ENVIAR</button>
+		{# SECOND BUTTOM TO PREVENTE MULTILE SUBMITS, CHECK FOR OTHER SOLUTIONS LATER #}
+		<button type="button" class="btn btn-primary" style="display: none;" disabled="disabled">ENVIAR</button>
 	</div>
 </div>
 
