@@ -46,7 +46,7 @@ class Plugin extends PluginBase
         $config_secret_key = MailConfig::get('secret_key');
 
         if ($config_site_key && $config_secret_key) {
-            Validator::extend('recaptcha', function($attribute, $value, $parameters) {
+            Validator::extend('recaptcha', function($attribute, $value, $parameters) use ($config) {
                 $post_data = http_build_query(
                     array(
                         'secret' => $config_secret_key,
