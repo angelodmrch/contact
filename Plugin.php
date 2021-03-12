@@ -178,7 +178,7 @@ class Plugin extends PluginBase
             'settings' => [
                 'label'       => 'dmrch.contact::lang.settings.label',
                 'description' => 'dmrch.contact::lang.settings.description',
-                'category'    => 'dmrch.contact::lang.settings.category',
+                'category'    => 'dmrch.contact::lang.settings.general',
                 'icon'        => 'icon-cog',
                 'class'       => 'Dmrch\Contact\Models\MailConfig',
                 'order'       => 500,

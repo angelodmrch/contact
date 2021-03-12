@@ -99,6 +99,7 @@ return [
         'label'       => 'Contact',
         'description' => 'Contact Setting',
         'category'    => 'Contact',
+        'general'     => 'General',
     ],
 
     'validation' => [

@@ -99,6 +99,7 @@ return [
         'label'       => 'Contato',
         'description' => 'Contato Configurações',
         'category'    => 'Contato',
+        'general'     => 'Geral',
     ],
 
     'validation' => [
