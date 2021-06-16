@@ -13,23 +13,21 @@
 {{ form_ajax('newsletter::onSubmit', { id: 'form-newsletter', update: { 'newsletter::form': '#form-container-newsletter' }}) }}
 
 	<div class="row">
-
 		<div class="col-lg-5 col-12">
 			<input type="text" name="name" placeholder="NOME" value="{{ post('name')|striptags }}" class="form-control {% if newsletter.news_errors.first('name') %}is-invalid{% endif %}">
 			<div class="invalid-feedback">{{ newsletter.news_errors.first('name') }}</div>
 		</div>
 
-		<div class="col-lg-5 col-12">
-			<input type="email" name="email" placeholder="E-MAIL" value="{{ post('email')|striptags }}" class="form-control {% if newsletter.news_errors.first('email') %}is-invalid{% endif %}">			
+		<div class="col-lg-12 col-12">
+			<input type="email" name="email" placeholder="Seu e-mail aqui" value="{{ post('email')|striptags }}" class="form-control {% if newsletter.news_errors.first('email') %}is-invalid{% endif %}">			
 			<div class="invalid-feedback">{{ newsletter.news_errors.first('email') }}</div>
 		</div>
 
-		<div class="col-lg-2 col-12">		
-			<button type="submit" class="btn btn-primary" onclick="$(this).hide();$(this).next('button').show();">ENVIAR</button>
+		<div class="col-lg-12 col-12">		
+			<button type="submit" class="btn btn-green-light" onclick="$(this).hide();$(this).next('button').show();">INSCREVER</button>
 			{# SECOND BUTTOM TO PREVENTE MULTILE SUBMITS, CHECK FOR OTHER SOLUTIONS LATER #}
-			<button type="button" class="btn btn-primary" style="display: none;" disabled="disabled">ENVIAR</button>
+			<button type="button" class="btn btn-green-light" style="display: none;" disabled="disabled">INSCREVER</button>
 		</div>
-
 	</div>
 
 {{ form_close() }}

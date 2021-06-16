@@ -40,6 +40,7 @@ return [
 
     'form' => [
         'id' => 'ID',
+        'save_on_db' => 'Save submits on DB',
         'name' => 'Name',
         'code' => 'Code',
         'emails' => 'E-mails',

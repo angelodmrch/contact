@@ -4,6 +4,12 @@
 
 tabs:
     fields:
+        save_on_db:
+            label: dmrch.contact::lang.form.save_on_db
+            type: switch
+            required: true
+            tab: dmrch.contact::lang.form.geral_tab
+
         name:
             label: dmrch.contact::lang.form.name
             type: text

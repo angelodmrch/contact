@@ -87,22 +87,26 @@ class Form extends ComponentBase
 
                 $data['message_html'] = $message;
 
-                $formSave = new ModelContact();
-                $formSave->form = post('form_name'); 
-                $formSave->email = post('email');  
-                $formSave->message = $message;
-                $formSave->status = 0;
-                $formSave->save();
+                if ($form->save_on_db) {
 
-                foreach ($form->fields as $key => $value) {
-                    if ( $value['type'] == 'file' && Input::file($value['name'])) {
-                        $saveC = new ModelFiles;
-                        $saveC->data = Input::file($value['name']);
-                        $saveC->attachment_id = $formSave->id;
-                        $saveC->attachment_type = 'Dmrch\Contact\Models\Contacts';
-                        $saveC->field = 'files'; 
-                        $saveC->save();
+                    $formSave = new ModelContact();
+                    $formSave->form = post('form_name'); 
+                    $formSave->email = post('email');  
+                    $formSave->message = $message;
+                    $formSave->status = 0;
+                    $formSave->save();
+
+                    foreach ($form->fields as $key => $value) {
+                        if ( $value['type'] == 'file' && Input::file($value['name'])) {
+                            $saveC = new ModelFiles;
+                            $saveC->data = Input::file($value['name']);
+                            $saveC->attachment_id = $formSave->id;
+                            $saveC->attachment_type = 'Dmrch\Contact\Models\Contacts';
+                            $saveC->field = 'files'; 
+                            $saveC->save();
+                        }
                     }
+                    
                 }
 
                 if ($form->emails) {
