@@ -76,6 +76,8 @@ return [
         'create' => 'Create Form',
         'update' => 'Edit Form',
         'preview' => 'Preview Form',
+        'button_label' => 'Button Label',
+        'button_class' => 'Button Class',
     ],
 
     'newsletter' => [
@@ -94,6 +96,15 @@ return [
         'create' => 'Create Newsletter',
         'update' => 'Edit Newsletter',
         'preview' => 'Preview Newsletter',
+        'name_label' => 'Name Label',
+        'name_placeholder' => 'Name Placeholder',
+        'name_width' => 'Name Width',
+        'email_label' => 'E-mail Label',
+        'email_placeholder' => 'Email Placeholder',
+        'email_width' => 'E-mail Width',
+        'button_label' => 'Button',
+        'button_class' => 'Button Class',
+        'button_width' => 'Button Width',
     ],
 
     'settings' => [

@@ -19,6 +19,8 @@ class CreateFormsTable extends Migration
             $table->string('redirect_to', 255)->nullable();
             $table->text('success_message')->nullable();
             $table->text('error_message')->nullable();
+            $table->string('button_label', 50);
+            $table->string('button_class', 50)->nullable();
             $table->timestamps();
         });
     }

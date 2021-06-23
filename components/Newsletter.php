@@ -3,6 +3,7 @@
 use Cms\Classes\ComponentBase;
 use Dmrch\Contact\Models\Newsletter as ModelNewsletter;
 use Validator;
+use Lang;
 
 class Newsletter extends ComponentBase
 {
@@ -30,8 +31,8 @@ class Newsletter extends ComponentBase
         ];
 
         $messages = [
-            'email.required' => 'dmrch.contact::lang.validation.required',
-            'email.email' => 'dmrch.contact::lang.validation.email'
+            'email.required' => Lang::get('dmrch.contact::lang.validation.required'),
+            'email.email' => Lang::get('dmrch.contact::lang.validation.email')
         ];
 
         $validation = Validator::make(post(), $rules, $messages);    

@@ -9,6 +9,7 @@ use Validator;
 use Input;
 use Mail;
 use Redirect;
+use Lang;
 
 class Form extends ComponentBase
 {
@@ -51,7 +52,7 @@ class Form extends ComponentBase
         ];
 
         $messages = [
-            'g-recaptcha-response.recaptcha' => 'dmrch.contact::lang.validation.required',
+            'g-recaptcha-response.recaptcha' => Lang::get('dmrch.contact::lang.validation.required'),
         ];
 
         foreach ($form->fields as $field) {

@@ -1,11 +1,11 @@
 {% if newsletter.news_success %}
 	<div class="alert alert-success">
-		<p class="font-regular">Cadastrado com sucesso!</p>
+		{{ forms.getConfig('newsletter_success') }}
 	</div>
 {% else %}
 	{% if newsletter.news_errors|length > 0 %}
 		<div class="alert alert-danger mt-1">
-			<p>Ocorreram erros de validação. Verifique o formulário!</p>
+			{{ forms.getConfig('newsletter_error') }}
 		</div>
 	{% endif %}
 {% endif %}
@@ -13,21 +13,31 @@
 {{ form_ajax('newsletter::onSubmit', { id: 'form-newsletter', update: { 'newsletter::form': '#form-container-newsletter' }}) }}
 
 	<div class="row">
-		<div class="col-lg-5 col-12">
-			<input type="text" name="name" placeholder="NOME" value="{{ post('name')|striptags }}" class="form-control {% if newsletter.news_errors.first('name') %}is-invalid{% endif %}">
-			<div class="invalid-feedback">{{ newsletter.news_errors.first('name') }}</div>
-		</div>
+		{% if forms.getConfig('newsletter_name') %}
 
-		<div class="col-lg-12 col-12">
-			<input type="email" name="email" placeholder="Seu e-mail aqui" value="{{ post('email')|striptags }}" class="form-control {% if newsletter.news_errors.first('email') %}is-invalid{% endif %}">			
+			<div class="col-lg-{{ forms.getConfig('name_width') }} col-12 mb-3">
+				{% if forms.getConfig('name_label') %}
+					<label for="name">{{ forms.getConfig('name_label') }}</label>
+				{% endif %}
+				<input type="text" name="name" placeholder="{{ forms.getConfig('name_placeholder') }}" value="{{ post('name')|striptags }}" class="form-control {% if newsletter.news_errors.first('name') %}is-invalid{% endif %}">
+				<div class="invalid-feedback">{{ newsletter.news_errors.first('name') }}</div>
+			</div> 
+		{% endif %}
+
+		<div class="col-lg-{{ forms.getConfig('email_width') }} col-12 mb-3">
+
+			{% if forms.getConfig('email_label') %}
+				<label for="email">{{ forms.getConfig('email_label') }}</label>
+			{% endif %}
+			<input type="email" name="email" placeholder="{{ forms.getConfig('email_placeholder') }}" value="{{ post('email')|striptags }}" class="form-control {% if newsletter.news_errors.first('email') %}is-invalid{% endif %}">			
 			<div class="invalid-feedback">{{ newsletter.news_errors.first('email') }}</div>
 		</div>
 
-		<div class="col-lg-12 col-12">		
-			<button type="submit" class="btn btn-green-light" onclick="$(this).hide();$(this).next('button').show();">INSCREVER</button>
+		<div class="col-lg-{{ forms.getConfig('button_width') }} col-12">	
+			<button type="submit" class="{{ forms.getConfig('button_class') }}" onclick="$(this).hide();$(this).next('button').show();">{{ forms.getConfig('button_label') }}</button>
 			{# SECOND BUTTOM TO PREVENTE MULTILE SUBMITS, CHECK FOR OTHER SOLUTIONS LATER #}
-			<button type="button" class="btn btn-green-light" style="display: none;" disabled="disabled">INSCREVER</button>
+			<button type="button" class="{{ forms.getConfig('button_class') }}" style="display: none;" disabled="disabled">{{ forms.getConfig('button_label') }}</button>
 		</div>
 	</div>
-
+	
 {{ form_close() }}

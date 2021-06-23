@@ -18,6 +18,7 @@ tabs:
             tab: dmrch.contact::lang.form.geral_tab
 
         code:
+            permissions: dmrch.contact.access_forms_edit
             label: dmrch.contact::lang.form.code
             type: text
             span: right
@@ -30,6 +31,21 @@ tabs:
         emails:
             label: dmrch.contact::lang.form.emails
             type: text
+            tab: dmrch.contact::lang.form.geral_tab
+
+        button_label:
+            permissions: dmrch.contact.access_forms_edit
+            label: dmrch.contact::lang.form.button_label
+            type: text
+            span: left
+            required: true
+            tab: dmrch.contact::lang.form.geral_tab
+
+        button_class:
+            permissions: dmrch.contact.access_forms_edit
+            label: dmrch.contact::lang.form.button_class
+            type: text
+            span: right
             tab: dmrch.contact::lang.form.geral_tab
             
         fields:

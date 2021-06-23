@@ -29,22 +29,28 @@
 	
 	{% for field in form.fields %}
 
-		<div class="col-lg-{{ field.columns }} col-12">	
+		<div class="col-lg-{{ field.columns }} col-12 mb-3">	
 
 			{% if field.type == 'text' or field.type == 'email' or field.type == 'number' or field.type == 'password' or field.type == 'file' %}
-				<label for="{{ field.name }}">{{ field.label }}</label>
+				{% if field.label %}
+					<label for="{{ field.name }}">{{ field.label }}</label>
+				{% endif %}
 				<input type="{{ field.type }}" name="{{ field.name }}" id="{{ field.name }}" placeholder="{{ field.placeholder }}" class="form-control {% if forms.errors.first(field.name) %}is-invalid{% endif %}" value="{{ post(field.name)|striptags }}">
 				<span class="invalid-feedback">{{ forms.errors.first(field.name) }}</span>
 			{% endif %}
 
 			{% if field.type == 'textarea' %}
-				<label for="{{ field.name }}">{{ field.label }}</label>
+				{% if field.label %}
+					<label for="{{ field.name }}">{{ field.label }}</label>
+				{% endif %}
 				<textarea name="{{ field.name }}" id="{{ field.name }}" placeholder="{{ field.placeholder }}" class="form-control {% if forms.errors.first(field.name) %}is-invalid{% endif %}">{{ post(field.name)|striptags }}</textarea>
 				<span class="invalid-feedback">{{ forms.errors.first(field.name) }}</span>
 			{% endif %}
 
 			{% if field.type == 'dropdown' %}
-				<label for="{{ field.name }}">{{ field.label }}</label>
+				{% if field.label %}
+					<label for="{{ field.name }}">{{ field.label }}</label>
+				{% endif %}
 				<select name="{{ field.name }}" id="{{ field.name }}" class="form-control {% if forms.errors.first(field.name) %}is-invalid{% endif %}">
 					{% for option in field.options %}
 						<option value="{{ option.value }}">{{ option.label }}</option>
@@ -54,19 +60,23 @@
 			{% endif %}
 
 			{% if field.type == 'radio_list' or field.type == 'checkbox_list' %}
-				<label for="{{ field.name }}">{{ field.label }}</label>
+				{% if field.label %}
+					<label for="{{ field.name }}">{{ field.label }}</label>
+				{% endif %}
 				
-					{% for option in field.options %}
-						<input type="{{ field.type|replace({ '_list':'' }) }}" name="{{ field.name }}[]" id="{{ field.name }}-{{ loop.index }}" class="{% if forms.errors.first(field.name) %}is-invalid{% endif %}" value="{{ option.value }}">
-						<label for="{{ field.name }}-{{ loop.index }}">{{ option.label }}</label>			
-					{% endfor %}
-				
+				{% for option in field.options %}
+					<input type="{{ field.type|replace({ '_list':'' }) }}" name="{{ field.name }}[]" id="{{ field.name }}-{{ loop.index }}" class="{% if forms.errors.first(field.name) %}is-invalid{% endif %}" value="{{ option.value }}">
+					<label for="{{ field.name }}-{{ loop.index }}">{{ option.label }}</label>			
+				{% endfor %}
+
 				<span class="invalid-feedback">{{ forms.errors.first(field.name) }}</span>
 			{% endif %}
 
 			{% if field.type == 'checkbox' %}				
 				<input type="checkbox" name="{{ field.name }}" id="{{ field.name }}" class="{% if forms.errors.first(field.name) %}is-invalid{% endif %}" value="{{ field.value }}">
-				<label for="{{ field.name }}">{{ field.label }}</label>			
+				{% if field.label %}
+					<label for="{{ field.name }}">{{ field.label }}</label>
+				{% endif %}			
 				<span class="invalid-feedback">{{ forms.errors.first(field.name) }}</span>
 			{% endif %}
 
@@ -85,9 +95,9 @@
 			<span class="invalid-feedback">{{ forms.errors.first('g-recaptcha-response') }}</span>
 		{% endif %}
 
-		<button type="submit" class="btn btn-primary" onclick="$(this).hide();$(this).next('button').show();">ENVIAR</button>
+		<button type="submit" class="{{ form.button_class }}" onclick="$(this).hide();$(this).next('button').show();">{{ form.button_label }}</button>
 		{# SECOND BUTTOM TO PREVENTE MULTILE SUBMITS, CHECK FOR OTHER SOLUTIONS LATER #}
-		<button type="button" class="btn btn-primary" style="display: none;" disabled="disabled">ENVIAR</button>
+		<button type="button" class="{{ form.button_class }}" style="display: none;" disabled="disabled">{{ form.button_label }}</button>
 	</div>
 </div>
 

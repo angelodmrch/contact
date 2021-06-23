@@ -76,6 +76,8 @@ return [
         'create' => 'Criar Formulário',
         'update' => 'Editar Formulário',
         'preview' => 'Visualizar Formulário',
+        'button_label' => 'Label Botão',
+        'button_class' => 'Class Botão',
     ],
 
     'newsletter' => [
@@ -94,6 +96,15 @@ return [
         'create' => 'Criar Newsletter',
         'update' => 'Editar Newsletter',
         'preview' => 'Visualizar Newsletter',
+        'name_label' => 'Label Nome',
+        'name_placeholder' => 'Placeholder Nome',
+        'name_width' => 'Largura Nome',
+        'email_label' => 'Label E-mail',
+        'email_placeholder' => 'Placeholder E-mail',
+        'email_width' => 'Largura',
+        'button_label' => 'Botão',
+        'button_class' => 'Class Botão',
+        'button_width' => 'Largura Botão',
     ],
 
     'settings' => [

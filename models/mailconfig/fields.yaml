@@ -1,11 +1,121 @@
 # ===================================
 #  Form Field Definitions
 # ===================================
-fields:
-    site_key:
-        label: "reCaptcha Site Key"
-        type: text
+tabs:
+    fields:
+        site_key:
+            tab: dmrch.contact::lang.form.geral_tab
+            label: "reCaptcha Site Key"
+            type: text
 
-    secret_key:
-        label: "reCaptcha Secret Key"
-        type: text
+        secret_key:
+            tab: dmrch.contact::lang.form.geral_tab
+            label: "reCaptcha Secret Key"
+            type: text
+
+        newsletter_name:
+            tab: dmrch.contact::lang.base.newsletter
+            label: dmrch.contact::lang.newsletter.name
+            type: switch
+
+        name_label:
+            tab: dmrch.contact::lang.base.newsletter
+            label: dmrch.contact::lang.newsletter.name_label
+            type: text
+            span: left
+
+        name_placeholder:
+            tab: dmrch.contact::lang.base.newsletter
+            label: dmrch.contact::lang.newsletter.name_placeholder
+            type: text
+            span: right
+
+        name_width:
+            tab: dmrch.contact::lang.base.newsletter
+            label: dmrch.contact::lang.newsletter.name_width
+            type: dropdown
+            options:
+                12: 12
+                11: 11
+                10: 10
+                9: 9
+                8: 8
+                7: 7
+                6: 6
+                5: 5
+                4: 4
+                3: 3
+                2: 2
+                1: 1
+
+        email_label:
+            tab: dmrch.contact::lang.base.newsletter
+            label: dmrch.contact::lang.newsletter.email_label
+            type: text
+            span: left
+
+        email_placeholder:
+            tab: dmrch.contact::lang.base.newsletter
+            label: dmrch.contact::lang.newsletter.email_placeholder
+            type: text
+            span: right
+
+        email_width:
+            tab: dmrch.contact::lang.base.newsletter
+            label: dmrch.contact::lang.newsletter.email_width
+            type: dropdown
+            options:
+                12: 12
+                11: 11
+                10: 10
+                9: 9
+                8: 8
+                7: 7
+                6: 6
+                5: 5
+                4: 4
+                3: 3
+                2: 2
+                1: 1
+
+        button_label:
+            tab: dmrch.contact::lang.base.newsletter
+            label: dmrch.contact::lang.newsletter.button_label
+            type: text
+            span: left
+
+        button_class:
+            tab: dmrch.contact::lang.base.newsletter
+            label: dmrch.contact::lang.newsletter.button_class
+            type: text
+            span: right
+
+        button_width:
+            tab: dmrch.contact::lang.base.newsletter
+            label: dmrch.contact::lang.newsletter.button_width
+            type: dropdown
+            options:
+                12: 12
+                11: 11
+                10: 10
+                9: 9
+                8: 8
+                7: 7
+                6: 6
+                5: 5
+                4: 4
+                3: 3
+                2: 2
+                1: 1
+
+        newsletter_success:
+            tab: dmrch.contact::lang.base.newsletter
+            label: dmrch.contact::lang.form.success_message
+            type: text
+            span: left
+
+        newsletter_error:
+            tab: dmrch.contact::lang.base.newsletter
+            label: dmrch.contact::lang.form.error_message
+            type: text
+            span: right
