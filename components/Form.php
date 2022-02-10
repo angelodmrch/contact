@@ -35,6 +35,13 @@ class Form extends ComponentBase
         ];
     }
 
+    public function onRun() {
+        $this->addJs('https://www.google.com/recaptcha/api.js', [
+            'defer' => true,
+            'async' => true
+        ]);
+    }
+
     public function getForm($code) {
         return ModelForm::where('code', $code)->first();
     }
