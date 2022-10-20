@@ -73,7 +73,7 @@ class Form extends ComponentBase
             }
         }
 
-        $validation = Validator::make(post(), $rules, $messages);    
+        $validation = Validator::make(Input::all(), $rules, $messages);    
 
         if ($validation->fails()) {
             $this->errors = $validation->errors();
