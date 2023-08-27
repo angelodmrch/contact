@@ -10,3 +10,6 @@
     - Add field for setting if forms submits will be saved on database
     - update_dbsave_forms_table.php
 1.1.3: Newsletter adjustments
+1.1.4: 
+    - Added suport for input file with multiple prop
+    - update_email_column_on_contact_table.php

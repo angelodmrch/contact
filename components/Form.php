@@ -92,33 +92,28 @@ class Form extends ComponentBase
 
                 $message .= '</p>';
 
-
                 $data['message_html'] = $message;
-
-                if ($form->save_on_db) {
-
-                    $formSave = new ModelContact();
-                    $formSave->form = post('form_name'); 
-                    $formSave->email = post('email');  
-                    $formSave->message = $message;
-                    $formSave->status = 0;
-                    $formSave->save();
-
-                    foreach ($form->fields as $key => $value) {
-                        if ( $value['type'] == 'file' && Input::file($value['name'])) {
-                            $saveC = new ModelFiles;
-                            $saveC->data = Input::file($value['name']);
-                            $saveC->attachment_id = $formSave->id;
-                            $saveC->attachment_type = 'Dmrch\Contact\Models\Contacts';
-                            $saveC->field = 'files'; 
-                            $saveC->save();
+                
+                $formSave = new ModelContact();
+                $formSave->form = post('form_name'); 
+                $formSave->email = post('email');  
+                $formSave->message = $message;
+                $formSave->status = 0;
+                $formSave->save();
+            
+                foreach ($form->fields as $key => $value) {
+                    if ( $value['type'] == 'file') {
+                        if ($value['name'] &&  is_array(Input::file($value['name']))) {
+                            foreach(Input::file($value['name']) as $k => $v) {
+                                $this->saveFile($v, $formSave->id);
+                            }
+                        } else {
+                            $this->saveFile(Input::file($value['name']), $formSave->id);
                         }
                     }
-                    
                 }
 
                 if ($form->emails) {
-
                     $pathFiles = $formSave->files;
                     $emails = $form->emails; 
 
@@ -144,7 +139,10 @@ class Form extends ComponentBase
                         }
 
                     });
-
+                }
+                          
+                if (!$form->save_on_db) {
+                    $formSave->delete();
                 }
 
                 if ($form->redirect) {
@@ -156,5 +154,16 @@ class Form extends ComponentBase
                 $this->errors = $e->getMessage();
             } 
         }
+    }
+
+    public function saveFile($file,$id) {
+        $saveC = new ModelFiles;
+        $saveC->data = $file;
+        $saveC->attachment_id = $id;
+        $saveC->attachment_type = 'Dmrch\Contact\Models\Contacts';
+        $saveC->field = 'files'; 
+        $saveC->save();
+
+        return $saveC;
     }
 }

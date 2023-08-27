@@ -35,7 +35,7 @@
 				{% if field.label %}
 					<label for="{{ field.name }}">{{ field.label }}</label>
 				{% endif %}
-				<input type="{{ field.type }}" name="{{ field.name }}" id="{{ field.name }}" placeholder="{{ field.placeholder }}" class="form-control {% if forms.errors.first(field.name) %}is-invalid{% endif %}" value="{{ post(field.name)|striptags }}">
+				<input type="{{ field.type }}" name="{{ field.name }}{{ field.multiple?'[]':'' }}" id="{{ field.name }}" placeholder="{{ field.placeholder }}" class="form-control {% if forms.errors.first(field.name) %}is-invalid{% endif %}" value="{{ post(field.name)|striptags }}" {{ field.multiple?'multiple':'' }}>
 				<span class="invalid-feedback">{{ forms.errors.first(field.name) }}</span>
 			{% endif %}
 
@@ -46,7 +46,7 @@
 				<textarea name="{{ field.name }}" id="{{ field.name }}" placeholder="{{ field.placeholder }}" class="form-control {% if forms.errors.first(field.name) %}is-invalid{% endif %}">{{ post(field.name)|striptags }}</textarea>
 				<span class="invalid-feedback">{{ forms.errors.first(field.name) }}</span>
 			{% endif %}
-
+ 
 			{% if field.type == 'dropdown' %}
 				{% if field.label %}
 					<label for="{{ field.name }}">{{ field.label }}</label>

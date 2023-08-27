@@ -81,6 +81,15 @@ tabs:
                             checkbox_list: Checkbox List
                             radio_list: Radio List
                             partial: Partial
+                    
+                    multiple:
+                        label: dmrch.contact::lang.form.multiple
+                        type: checkbox
+                        value: true
+                        trigger:
+                            action: show
+                            field: type
+                            condition: value[file]
 
                     options:
                         type: repeater

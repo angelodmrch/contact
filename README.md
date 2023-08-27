@@ -1,6 +1,6 @@
 # Contact Plugin
 
-Plugin to manage Contacts Forms.
+Plugin to manage Contacts Forms for [Winter CMS](https://wintercms.com/) and [October CMS](https://octobercms.com/).
 
 ## Implementing front-end pages
 

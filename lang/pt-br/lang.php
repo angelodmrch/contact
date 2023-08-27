@@ -78,6 +78,7 @@ return [
         'preview' => 'Visualizar Formulário',
         'button_label' => 'Label Botão',
         'button_class' => 'Class Botão',
+        'multiple' => 'Multiplos'
     ],
 
     'newsletter' => [

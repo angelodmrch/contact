@@ -78,6 +78,7 @@ return [
         'preview' => 'Preview Form',
         'button_label' => 'Button Label',
         'button_class' => 'Button Class',
+        'multiple' => 'Multiple'
     ],
 
     'newsletter' => [
