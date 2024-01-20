@@ -8,14 +8,14 @@ class UpdateEmailColumnOnContactTable extends Migration
 {
     public function up()
     {
-        Schema::create('dmrch_contact_contacts', function(Blueprint $table) {
+        Schema::table('dmrch_contact_contacts', function ($table) {      
             $table->string('email', 255)->nullable()->change();
         });
     }
 
     public function down()
     {
-        Schema::create('dmrch_contact_contacts', function(Blueprint $table) {
+        Schema::table('dmrch_contact_contacts', function ($table) {  
             $table->string('email', 255)->change();
         });
     }
